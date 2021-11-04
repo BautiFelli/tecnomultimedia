@@ -1,6 +1,6 @@
 class Pelota {
 
-  float x, y, ang, vel, arcox=020, arcoy=0, ancho=800, alto=281, endX, endY, pct = 0.00;
+  float x, y, ang, vel, arcox=020, arcoy=0, ancho=800, alto=281, endX, endY;
   PImage pelota;
   int estado=0;
   boolean fueGol;
@@ -28,7 +28,7 @@ class Pelota {
   }
 
   void patear(Arquero a) {
-    if ((mouseX>arcox && mouseX<arcox+ancho && mouseY>arcoy && mouseY<arcoy+alto)  && (pct < 1)) {
+    if ((mouseX>arcox && mouseX<arcox+ancho && mouseY>arcoy && mouseY<arcoy+alto)) {
       
       click(); 
       if (estado==1) {
