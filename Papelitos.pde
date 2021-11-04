@@ -20,7 +20,7 @@ class Papelitos {
     noStroke();
     translate(x,y);
     rotate(ang);
-    rect(0,0,tam,5);
+    rect(x,y,tam,5);
     x+=1;
     y+=vel;
     ang=ang-vel;
