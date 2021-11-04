@@ -3,7 +3,7 @@ class Juego{
   
   
   PImage publico, escBayern, escUtd, inicio;
-  int cant=5000, resBayern=0,resUtd=0, pantallas=0;
+  int cant=500, resBayern=0,resUtd=0, pantallas=0;
   Pelota p;
   Arquero a;
   Papelitos[] pu=new Papelitos[cant];
