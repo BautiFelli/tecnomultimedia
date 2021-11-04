@@ -1,0 +1,6 @@
+PENALTY SHOOTOUT UCL 21/22
+Gana el primero en llegar a 5
+Si erras, suma el Bayern 
+Si metes, suma el Manchester
+Clickeando elegis el destino de la pelota
+INICIAR
