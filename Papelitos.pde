@@ -7,10 +7,10 @@ class Papelitos {
   Papelitos() {
    
    x=random(0,800);
-   y=random(-50,-100);
+   y=random(0,100);
    tam=random(5,35);
    c=color(random(0,255),random(0,255),random(0,255));
-   vel=random(1,3);
+   vel=random(0.1,0.5);
    ang=0;
   }
   
@@ -24,13 +24,16 @@ class Papelitos {
     x+=1;
     y+=vel;
     ang=ang-vel;
-  
+    if(y>600){
+     reciclar(); 
+
+    }
   }
   void reciclar(){
     
     if(y>280){
     x=random(0,800);
-    y=random(-50,-100);
+    y=random(0,100);
    tam=random(5,35);
    c=color(random(0,255),random(0,255),random(0,255));
    ang=0;
