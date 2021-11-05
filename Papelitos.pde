@@ -32,12 +32,12 @@ class Papelitos {
   void reciclar(){
     
     if(y>280){
-    x=random(0,800);
-    y=random(0,100);
-   tam=random(5,35);
-   c=color(random(0,255),random(0,255),random(0,255));
-   ang=0;
-    }
+     x=random(0,800);
+     y=random(0,100);
+     tam=random(5,35);
+     c=color(random(0,255),random(0,255),random(0,255));
+     ang=0;
+      }
     
   }
 
