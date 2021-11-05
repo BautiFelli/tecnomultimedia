@@ -151,28 +151,23 @@ void contador(){
   }
   
   
-   void boton(float x, float y, float tamX, float tamY){       
+   void boton(float x, float y, float tamX, float tamY){
       pushStyle();
-      
+
       fill(0);
       noStroke();
       if (mouseX>x && mouseX<x+tamX && mouseY>y && mouseY<y+tamY){
         fill(180);
-         if(mousePressed && pantallas==0){
-           
-             pantallas=1;
-                
-               
-                }else if(mousePressed && (pantallas==3 || pantallas ==4)){
-                     pantallas=0; 
-                     reiniciar();
-                  }
-                }
-                rect(x,y,tamX,tamY);
-               
-                
-                popStyle();
-              }
+        if(mousePressed && pantallas==0){
+          pantallas=1; 
+        }else if(mousePressed && (pantallas==3 || pantallas ==4)){
+          pantallas=0; 
+          reiniciar();
+        }
+      }
+      rect(x,y,tamX,tamY);
+      popStyle();
+   }
               
  void reiniciar(){
    resBayern=0;
