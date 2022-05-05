@@ -1,11 +1,11 @@
 class Caminante{
   
-  float x,y;
+  float x,y, px, py;
   float ancho;
   float altura;
   color c;
+  int estado=0;
 
-  
  Caminante (color c_) {
   x=random(0,1200);
   y=400;
@@ -15,12 +15,19 @@ class Caminante{
  }
   
   void dibujar(){
+    
+    px=(x+mouseX)%mouseX; 
    rectMode(CENTER);
    noStroke();
    fill(c);
+   if((dist(mouseX,mouseX,x,x)<px) && (estado==0)){  //el dist hace lo del movimiento que hace la obra.  Los estados los estaba probando
    rect(x,y,ancho,altura); 
-   
- 
+   estado=1;
+   } else if((x>1200)&& (estado==1)){
+     estado=0;
+     background(255);
+   }
+   println(estado);
 }
   
  void cambiarAltura(){
