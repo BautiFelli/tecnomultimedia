@@ -5,7 +5,7 @@ class Enemigo{
   PImage lobo;
   
   Enemigo() {
-    lobo = loadImage("img/lobito.jpg");
+    lobo = loadImage("img/lobito.png");
     
     
     
@@ -18,7 +18,6 @@ class Enemigo{
     pushMatrix();
     imageMode(CENTER);
     image(lobo,x,y);
-    x += velocidad * direccion;
     
 
   

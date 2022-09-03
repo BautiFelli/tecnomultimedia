@@ -46,6 +46,9 @@ void setup() {
   myCircle.setName("circulo");
   mundo.add(myCircle);
 
+  lobo=new Enemigo();
+  lobo.colocar();
+
   for (int i=0; i<estruc.length; i++) {
 
     int X = p[i][0], Y = p[i][1];
@@ -119,7 +122,6 @@ void setup() {
     estruc[i].setName("rec"+i);
     estruc[i].setGrabbable(false);
     estruc[i].setNoStroke();
-    estruc[i].setDensity(0.7);
     estruc[i].setForce(15,15); 
     estruc[i].setPosition(X, Y);
   }
@@ -154,7 +156,7 @@ void setup() {
   base.setNoStroke();
   mundo.add(base);
   
-  lobo=new Enemigo();
+
   
   cadena= new FMouseJoint (myCircle, x,y);
     cadena.setNoStroke();
@@ -178,8 +180,7 @@ void draw() {
     timer = 60;
     live = true;
   }
-  lobo.colocar();
-  mundo.add(lobo);
+ 
   mundo.draw();
   
 }
