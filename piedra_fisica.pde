@@ -11,16 +11,16 @@ void setup() {
   background(255);
 
   FPoly base = new FPoly();
-  base.vertex(650, 250);
+  base.vertex(650, 120);
 
-base.vertex(680,220);
-  base.vertex(700, 240);
-   base.vertex(715, 230);
-   base.vertex(750, 240);
-base.vertex(800,300);
-base.vertex(750, 380);
-    base.vertex(700, 350);
-    base.vertex(600, 285);
+base.vertex(680,100);
+  base.vertex(700, 120);
+   base.vertex(715, 110);
+   base.vertex(750, 130);
+base.vertex(800,190);
+base.vertex(750, 270);
+    base.vertex(700, 240);
+   base.vertex(600, 225);
   
   /*  base.vertex(620, 240);
 
