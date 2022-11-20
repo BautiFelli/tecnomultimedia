@@ -8,8 +8,6 @@ Principal principal;
 Spout spout;
 SoundFile s_wood, s_perder, s_lobohurt, s_disparo, s_derrumbe;
 
-
-
 void setup() {
   size(1080, 1060, P2D);
   Fisica.init(this);

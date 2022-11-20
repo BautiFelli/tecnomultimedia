@@ -6,6 +6,8 @@ class Principal {
   Receptor Receptor;
   Administrador Admin;
   Enemigo Enemigo;
+  
+  FPoly Piedra;
 
   ArrayList <Estructura> Estructuras = new ArrayList<Estructura>();
   int OscPort = 12345;
@@ -23,16 +25,35 @@ class Principal {
     this.CargaPosicionesEstructuras();
     this.CargaPosicionesBase();
     this.Bala = new Bala(30, 520);
+    this.Piedra = new FPoly();
     this.Base = new Base(this.PosBase);
     this.Win = new Escenario("¡GANASTE!", false);
     this.Lose = new Escenario("PERDISTE", false);
     this.Manual = new Escenario("", true);
     this.Fondo = loadImage("./assets/fondoo.jpg");
     font=loadFont("Impact-48.vlw");
+    
+    this.Piedra.setStatic(true);
+    this.Piedra.setGrabbable(false);
+    //this.Piedra.vertex(width/2-90, 0);
+    //this.Piedra.vertex(width/2+90, 80);
+    //this.Piedra.vertex(width/2+160, 0);
+
+    this.Piedra.vertex(680-50, 80);
+    this.Piedra.vertex(700-50, 120-20);
+    this.Piedra.vertex(715-50, 110-20);
+    this.Piedra.vertex(750-50, 130-20);
+    this.Piedra.vertex(800-50, 190-20);
+    this.Piedra.vertex(800-20, 230);
+    this.Piedra.vertex(750-50, 280);
+    this.Piedra.vertex(700-50, 240-20);
+    this.Piedra.vertex(600-50, 180);
+    this.Piedra.vertex(550, 125);
 
     mundo.add(this.Bala.Hitbox);
     mundo.add(this.Base.Suelo);
     mundo.add(this.Enemigo.Hitbox);
+    mundo.add(this.Piedra);
 
 
     this.ReseteaAmbiente(mundo);
@@ -49,6 +70,16 @@ class Principal {
       this.Bala.Dibujar();
       this.DibujarEstructuras();
       this.Enemigo.Dibujar();
+      pushMatrix();
+      for (Blob b : this.Receptor.blobs) {
+        float x = map(b.centroidX, 0, 1, 0, width);
+        float y = map(b.centroidY, 0, 1, 0, height);
+        strokeWeight(0);
+        textAlign(CENTER, CENTER);
+        textSize(72);
+        text(this.Proyectiles, x, y);
+      }
+      popMatrix();
       break;
     case 1:
       this.Win.MostrarEscenario(this.Base.Suelo);
@@ -148,7 +179,12 @@ class Principal {
       s_derrumbe.play();
       this.Estado = 1;
     }
-  }
+   
+   if(contacto.contains(this.Piedra, this.Bala.Hitbox)){
+      this.Bala.Hitbox.addImpulse(500,500);
+    }  
+
+}
 
   void DibujaFondo() {
     pushMatrix();

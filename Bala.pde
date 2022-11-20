@@ -32,7 +32,10 @@ class Bala {
   void DispararBala(float x_, float y_) {
     float d = dist(x_, height, this.Hitbox.getX(), height);
     float p = map(d, 0, width, 0, 2500);
-    float y = map(y_, height, 0, 0, -1800);
+    float y = map(y_, height, 0, 0, -1500);
+    if(y_>525){
+    y= map(y_, height, 0, 0, -800);
+    }
     this.Hitbox.addImpulse(p, y);
   }
 
